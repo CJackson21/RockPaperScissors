@@ -10,6 +10,7 @@
     let computerScore = 0;
     let roundWinner = '';
 
+    // function for computer to generate a choice at random
     function computerPlay() {
         var choiceList = ['rock', 'paper', 'scissors'];
 
@@ -17,6 +18,7 @@
         return choice;
     }
 
+    // plays the round and determines who wins each round, or tie
     function playRound(playerSelection, computerSelection) {
         if (playerSelection == computerSelection)
         {
@@ -40,10 +42,12 @@
             return 'round lose';
         }
     }
+
+    // plays the game and keeps score
     function game() {
         for (let i = 0; i < 5; i++)
         {
-            const player = window.prompt('enter rock, paper, or scissors').toLowerCase();
+            const player = window.prompt('enter rock, paper, or scissors').toLowerCase();            
             const computer = computerPlay();
             playRound(player, computer);
         }
@@ -56,17 +60,18 @@
         else {
             roundWinner = 'neither';
         }
-        return roundWinner;
+        console.log("the winner is " + roundWinner);
+        return "The winner is " + roundWinner;
     }
 
+    // helps determine the winner of the game
     function winner() {
-        game();
         const gameWinner = 'The winner is ' + roundWinner;
         console.log(gameWinner);
         return gameWinner;
     }
 
-winner();
+game();
     
 </script>
   
